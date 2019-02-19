@@ -4,7 +4,10 @@ xcode_project: RileyLink.xcodeproj
 xcode_scheme: RileyLink
 before_script:
     - git --version
+    - /usr/bin/env git --version
     - echo $PATH
-    - git config --global protocol.version 1
+    - which git
+    - which -a git
+    - carthage version
 script:
     - xcodebuild -project RileyLink.xcodeproj -scheme RileyLink build -destination 'name=iPhone SE' test
